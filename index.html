@@ -14,16 +14,17 @@
             <p>Paste your long URL and get a shortened version instantly!</p>
         </header>
 
-        <main>
-            <div class="url-input-container">
-                <input type="url" id="originalUrl" placeholder="Enter your long URL here..." required>
-                <button id="shortenBtn">Shorten URL</button>
-            </div>
+        <main role="main">
+            <form class="url-input-container" id="shortenForm" autocomplete="off">
+                <label for="originalUrl" class="visually-hidden">Long URL</label>
+                <input type="url" id="originalUrl" placeholder="Enter your long URL here..." required autocomplete="off">
+                <button id="shortenBtn" type="submit" aria-label="Shorten URL">Shorten URL</button>
+            </form>
 
-            <div class="result-container" id="resultContainer">
+            <div class="result-container" id="resultContainer" aria-live="polite">
                 <div class="shortened-url-box">
-                    <input type="text" id="shortenedUrl" readonly>
-                    <button id="copyBtn" class="copy-btn">
+                    <input type="text" id="shortenedUrl" readonly aria-label="Shortened URL">
+                    <button id="copyBtn" class="copy-btn" aria-label="Copy shortened URL">
                         <i class="far fa-copy"></i> Copy
                     </button>
                 </div>
@@ -42,5 +43,17 @@
         </footer>
     </div>
     <script src="script.js"></script>
+    <style>
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+    </style>
 </body>
 </html>
