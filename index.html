@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-link"></i> URL Shortener</h1>
+            <p>Paste your long URL and get a shortened version instantly!</p>
+        </header>
+
+        <main>
+            <div class="url-input-container">
+                <input type="url" id="originalUrl" placeholder="Enter your long URL here..." required>
+                <button id="shortenBtn">Shorten URL</button>
+            </div>
+
+            <div class="result-container" id="resultContainer">
+                <div class="shortened-url-box">
+                    <input type="text" id="shortenedUrl" readonly>
+                    <button id="copyBtn" class="copy-btn">
+                        <i class="far fa-copy"></i> Copy
+                    </button>
+                </div>
+            </div>
+
+            <div class="history-container">
+                <h2>Recent URLs</h2>
+                <div id="urlHistory" class="url-history">
+                    <!-- History items will be added here dynamically -->
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Made with <i class="fas fa-heart"></i> by URL Shortener Team</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
